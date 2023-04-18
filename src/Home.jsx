@@ -1,32 +1,20 @@
-const mockEmployees = [
-  {
-    id: 0,
-    name: "mock",
-    lastname: 'mocklastname',
-    position: "Manager"
-  },
-  {
-    id: 1,
-    name: "employee 1",
-    lastname: "em",
-    position: "Engineer"
-  },
-  {
-    id: 2,
-    name: "employee 2",
-    lastname: "lord",
-    position: "Designer"
-  },
-]
+import React, {useState} from 'react';
+import Layout from './Layout';
+import User from './User';
+import Admin from './Admin';
+
 
 const Home = () => {
+  const [sector, setSector] = useState();
 
   return (
-    <div>
-
-    </div>
+    <Layout>
+        <User/>
+    </Layout>
+      
   )
 }
+
 
 
 
