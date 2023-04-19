@@ -16,9 +16,21 @@ const Admin = ({database, addEmployees, stateDatabase}) => {
     }
 
     const deleteTableRows = (id) => {
+        // alert ('You will detroy your data');
         const rows = [...database];
         rows.splice(id, 1);
         stateDatabase([...rows]);
+    }
+
+    const confirmDelete = (id) => {
+        let text = "Press a button!\nEither OK or Cancel.";
+        if (confirm(text) == true) {
+            deleteTableRows(id);
+        } else {
+            alert("You canceled!");
+        }
+
+        
     }
 
     const deleteAllTableRows = () => {
@@ -55,7 +67,7 @@ const Admin = ({database, addEmployees, stateDatabase}) => {
                                 <td>{item.lastname}</td>
                                 <td>{item.position}</td>
                                 <td><button onClick={() => {
-                                    deleteTableRows(id)
+                                    confirmDelete(id)
                                 }}>Delete</button></td>
                             </tr>
                         )
